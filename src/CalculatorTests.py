@@ -28,6 +28,11 @@ class MyTestCase(unittest.TestCase):
         for row in test_input:
             self.assertEqual(calculator.div(row['Value 1'], row['Value 2']),float(row['Result']))
 
+
+    def test_sq_calculator(self):
+        test_input = CsvReader('/src/Square.csv').data
+        for row in test_input:
+            self.assertEqual(calculator.sq(row['Value 1']),int(row['Result']))
             
 
 
