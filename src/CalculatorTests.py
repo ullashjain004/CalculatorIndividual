@@ -33,7 +33,14 @@ class MyTestCase(unittest.TestCase):
         test_input = CsvReader('/src/Square.csv').data
         for row in test_input:
             self.assertEqual(calculator.sq(row['Value 1']),int(row['Result']))
-            
+
+
+    def test_sqroot_calculator(self):
+        test_input = CsvReader('/src/Square Root.csv').data
+        for row in test_input:
+            result = round(calculator.sqroot(int(row['Value 1'])), 8)
+            self.assertEqual(result, round(float(row['Result']), 8))
+
 
 
 
