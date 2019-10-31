@@ -23,6 +23,14 @@ class MyTestCase(unittest.TestCase):
             self.assertEqual(calculator.mul(row['Value 1'], row['Value 2']),int(row['Result']))
 
 
+    def test_div_calculator(self):
+        test_input = CsvReader('/src/Division.csv').data
+        for row in test_input:
+            self.assertEqual(calculator.div(row['Value 1'], row['Value 2']),float(row['Result']))
+
+            
+
+
 
 if __name__ == '__main__':
     unittest.main()
