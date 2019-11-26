@@ -1,5 +1,7 @@
 FROM python:3
 
-ADD src /src
-
-CMD [ "python", "./src/CalculatorTests.py" ]
+COPY . /web
+WORKDIR /web
+RUN pip install -r ./requirements.txt
+ENTRYPOINT ["python"]
+CMD ["/web/Database/sqllite_create.py"]
